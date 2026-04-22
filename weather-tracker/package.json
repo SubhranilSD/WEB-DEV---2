@@ -1,0 +1,12 @@
+{
+  "name": "weather-tracker",
+  "version": "1.0.0",
+  "description": "Root workspace to run client and server concurrently",
+  "scripts": {
+    "dev": "npx concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\""
+  },
+  "dependencies": {
+    "framer-motion": "^12.38.0",
+    "motion": "^12.38.0"
+  }
+}

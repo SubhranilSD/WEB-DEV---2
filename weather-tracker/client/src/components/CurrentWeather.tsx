@@ -69,7 +69,7 @@ export function CurrentWeather({ data }: CurrentWeatherProps) {
       <div className="relative overflow-hidden rounded-[4rem] border border-white/10 bg-white/[0.01] backdrop-blur-3xl p-16 md:p-24 lg:p-32">
         {/* Main Info */}
         <div className="flex flex-col items-center text-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             className="flex items-center gap-3 mb-4 bg-white/5 px-6 py-2 rounded-full border border-white/5"
@@ -77,7 +77,7 @@ export function CurrentWeather({ data }: CurrentWeatherProps) {
             <MapPin size={16} className="text-sky-500" />
             <span className="text-xl font-bold tracking-tight">{data.name}, {data.sys.country}</span>
           </motion.div>
-          
+
           <p className="text-white/30 text-xs font-bold uppercase tracking-[0.3em] mb-12">
             {new Date().toLocaleDateString("en-US", { weekday: "long", day: "numeric", month: "long" })}
           </p>
@@ -87,19 +87,19 @@ export function CurrentWeather({ data }: CurrentWeatherProps) {
               <AnimatedNumber value={data.main.temp} />
               <span className="text-4xl md:text-5xl font-light text-white/20 mt-8 ml-2">°C</span>
             </div>
-            
+
             <div className="flex flex-col items-center md:items-start text-center md:text-left">
               <img
                 src={`https://openweathermap.org/img/wn/${weather.icon}@4x.png`}
                 alt={weather.description}
                 className="w-32 h-32 md:w-40 md:h-40 drop-shadow-2xl"
               />
-               <p className="text-sky-400 font-black uppercase tracking-[0.4em] text-sm md:text-base mb-2">
+              <p className="text-sky-400 font-black uppercase tracking-[0.4em] text-sm md:text-base mb-2">
                 {weather.description}
               </p>
               <div className="flex items-center gap-4 text-white/40 text-[10px] font-black tracking-widest uppercase">
-                 <span className="flex items-center gap-1.5"><span className="text-sky-500">↑</span> {Math.round(data.main.temp_max)}°</span>
-                 <span className="flex items-center gap-1.5"><span className="text-blue-500">↓</span> {Math.round(data.main.temp_min)}°</span>
+                <span className="flex items-center gap-1.5"><span className="text-sky-500">↑</span> {Math.round(data.main.temp_max)}°</span>
+                <span className="flex items-center gap-1.5"><span className="text-blue-500">↓</span> {Math.round(data.main.temp_min)}°</span>
               </div>
             </div>
           </div>
@@ -115,20 +115,20 @@ export function CurrentWeather({ data }: CurrentWeatherProps) {
 
         {/* Sunrise/Sunset */}
         <div className="flex items-center justify-center gap-12 pt-12 border-t border-white/5">
-           <div className="flex items-center gap-4">
-             <Sunrise size={20} className="text-amber-400/50" />
-             <div className="flex flex-col">
-               <span className="text-[10px] text-white/20 uppercase tracking-widest font-black">Sunrise</span>
-               <span className="text-base font-bold text-white/70">{formatTime(data.sys.sunrise, data.timezone)}</span>
-             </div>
-           </div>
-           <div className="flex items-center gap-4">
-             <Sunset size={20} className="text-indigo-400/50" />
-             <div className="flex flex-col">
-               <span className="text-[10px] text-white/20 uppercase tracking-widest font-black">Sunset</span>
-               <span className="text-base font-bold text-white/70">{formatTime(data.sys.sunset, data.timezone)}</span>
-             </div>
-           </div>
+          <div className="flex items-center gap-4">
+            <Sunrise size={20} className="text-amber-400/50" />
+            <div className="flex flex-col">
+              <span className="text-[10px] text-white/20 uppercase tracking-widest font-black">Sunrise</span>
+              <span className="text-base font-bold text-white/70">{formatTime(data.sys.sunrise, data.timezone)}</span>
+            </div>
+          </div>
+          <div className="flex items-center gap-4">
+            <Sunset size={20} className="text-indigo-400/50" />
+            <div className="flex flex-col">
+              <span className="text-[10px] text-white/20 uppercase tracking-widest font-black">Sunset</span>
+              <span className="text-base font-bold text-white/70">{formatTime(data.sys.sunset, data.timezone)}</span>
+            </div>
+          </div>
         </div>
       </div>
     </motion.div>

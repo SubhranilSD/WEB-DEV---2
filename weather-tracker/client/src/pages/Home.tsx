@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#050505] text-white selection:bg-sky-500/30 font-sans relative">
-      
+
       {/* ── Fixed Background Shader ── */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         <div className="absolute inset-0 opacity-60 mix-blend-screen scale-110">
@@ -22,7 +22,7 @@ export default function Home() {
 
       <div className="relative z-10">
         {/* ── Search & Hero Section ── */}
-        <motion.div 
+        <motion.div
           layout
           className="flex flex-col items-center justify-center min-h-screen px-6 transition-all duration-1000 ease-in-out"
           style={{ paddingBottom: current ? "10vh" : "0" }}
@@ -47,41 +47,41 @@ export default function Home() {
 
         {/* ── Weather Data Section ── */}
         <div className="relative pb-32">
-            <AnimatePresence mode="wait">
-              {(current || error) && (
-                <motion.div
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20, filter: "blur(10px)" }}
-                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                  className="max-w-[1400px] w-full mx-auto px-12 space-y-24 flex flex-col items-center"
-                >
-                  {/* Error */}
-                  {error && (
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      className="w-full flex items-center justify-center gap-4 bg-red-500/10 border border-red-500/20 rounded-3xl p-8 text-red-200 backdrop-blur-2xl transition-all"
-                    >
-                      <AlertCircle size={24} className="text-red-400" />
-                      <p className="font-semibold text-xl">{error}</p>
-                    </motion.div>
-                  )}
+          <AnimatePresence mode="wait">
+            {(current || error) && (
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20, filter: "blur(10px)" }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="max-w-[1400px] w-full mx-auto px-12 space-y-24 flex flex-col items-center"
+              >
+                {/* Error */}
+                {error && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="w-full flex items-center justify-center gap-4 bg-red-500/10 border border-red-500/20 rounded-3xl p-8 text-red-200 backdrop-blur-2xl transition-all"
+                  >
+                    <AlertCircle size={24} className="text-red-400" />
+                    <p className="font-semibold text-xl">{error}</p>
+                  </motion.div>
+                )}
 
-                  {/* Current weather and forecast */}
-                  {current && <CurrentWeather data={current} />}
-                  {forecast && <ForecastStrip data={forecast} />}
-                </motion.div>
-              )}
-            </AnimatePresence>
+                {/* Current weather and forecast */}
+                {current && <CurrentWeather data={current} />}
+                {forecast && <ForecastStrip data={forecast} />}
+              </motion.div>
+            )}
+          </AnimatePresence>
 
-            {/* ── Footer ── */}
-            <motion.footer 
-                layout
-                className="text-center text-white/10 text-[10px] py-20 mt-20 tracking-[0.5em] uppercase font-black border-t border-white/5 mx-auto max-w-5xl"
-            >
-              <p>Powered by OpenWeatherMap</p>
-            </motion.footer>
+          {/* ── Footer ── */}
+          <motion.footer
+            layout
+            className="text-center text-white/10 text-[10px] py-20 mt-20 tracking-[0.5em] uppercase font-black border-t border-white/5 mx-auto max-w-5xl"
+          >
+            <p>Powered by OpenWeatherMap</p>
+          </motion.footer>
         </div>
       </div>
     </div>

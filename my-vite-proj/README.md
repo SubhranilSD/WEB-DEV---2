@@ -8,3 +8,19 @@
 # rules to use hooks
 1. Only call hooks at the top level
 2. Only call hooks from React functions
+
+## UseEffect hook
+1. After the page render for the first time the useeffect hook will work atleast once.
+ Syntax:
+
+ ```javascript
+ useEffect(() => {
+     //mounting
+      first
+    
+      return () => {
+        //unmounting
+        second
+      }
+    }, [Updating]) ```
+a

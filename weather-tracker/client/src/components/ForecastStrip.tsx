@@ -87,7 +87,7 @@ export function ForecastStrip({ data }: ForecastStripProps) {
               <p className="text-3xl font-black text-white mb-1">
                 {Math.round(item.main.temp)}<span className="text-lg text-white/20 font-light ml-0.5">°</span>
               </p>
-              
+
               <p className="text-[9px] text-white/30 font-bold uppercase tracking-widest mb-6">
                 {item.weather[0].main}
               </p>

@@ -10,8 +10,6 @@ const UseStateOne = () => {
     }, [count])  // count is the dependency of useeffect, HENCE USE EFFECT BAS  count pe kaam karega
 
 
-    console.log()
-
     function increase() {
         setCount(count + 1) //will update the count value
     }

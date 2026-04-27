@@ -1,0 +1,143 @@
+.horizon-container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 160px);
+  overflow-x: auto;
+  overflow-y: hidden;
+  background: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+}
+.horizon-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+.horizon-container.is-fullscreen {
+  height: 100vh;
+  z-index: 9999;
+  background: var(--bg-primary);
+  padding: 40px;
+}
+
+.horizon-controls {
+  padding: 24px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  left: 0;
+  z-index: 10;
+}
+
+.horizon-info h2 {
+  font-size: 32px;
+  margin: 0;
+  color: var(--text-primary);
+}
+.horizon-info p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 4px 0 0;
+}
+
+.horizon-fs-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+.horizon-fs-btn:hover {
+  background: var(--accent-indigo);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.horizon-track {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 100px;
+  gap: 100px;
+  min-width: max-content;
+}
+
+.horizon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.horizon-card-spacer {
+  width: 420px;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
+}
+
+.horizon-date-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  position: relative;
+}
+
+.horizon-date-label::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 2000px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--border-color) 5%, var(--border-color) 95%, transparent);
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.horizon-node {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 3px solid var(--bg-primary);
+  box-shadow: 0 0 15px currentColor;
+  z-index: 2;
+}
+
+.horizon-progress-wrap {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 4px;
+  background: var(--bg-secondary);
+  border-radius: 999px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.horizon-progress-bar {
+  width: 100%;
+  height: 100%;
+  background: var(--accent-indigo);
+  transform-origin: left;
+}
+
+@media (max-width: 768px) {
+  .horizon-card-spacer {
+    width: 300px;
+  }
+  .horizon-track {
+    gap: 40px;
+    padding: 0 40px;
+  }
+}

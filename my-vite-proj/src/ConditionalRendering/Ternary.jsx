@@ -4,6 +4,15 @@ const Ternary = () => {
 
     const isLoggenin = true;
 
+    useEffect(() => {
+      first
+    
+      return () => {
+        second
+      }
+    }, [third])
+    
+
     return (
         <>
             <div>Ternary</div>
